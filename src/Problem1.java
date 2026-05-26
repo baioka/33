@@ -1,11 +1,23 @@
 public class Problem1 {
-    public int search(int[] A, int key) {
-        // write your code here
-        return -1;
-    }
-
-    static void main(String[] args) {
-        // test your code here
-        System.out.println(new Problem1().search(new int[]{1,2,3,4,5,6,7,8,9,10}, 9));
+    public static int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        
+        int left = 0;
+        int right = nums.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (nums[mid] == target) {
+                return mid; // Нашли число, возвращаем его индекс
+            } else if (nums[mid] < target) {
+                left = mid + 1; // Ищем в правой половине
+            } else {
+                right = mid - 1; // Ищем в левой половине
+            }
+        }
+        return -1; // Если число не нашли
     }
 }
