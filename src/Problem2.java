@@ -1,11 +1,23 @@
 public class Problem2 {
-    public int insertPosition(int[] A, int key) {
-        // write your code here
-        return A.length;
-    }
-
-    static void main(String[] args) {
-        // test your code here
-        System.out.println(new Problem2().insertPosition(new int[] {1, 2, 3, 4, 5}, 6));
+    public static int searchInsert(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int left = 0;
+        int right = nums.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left; // В конце цикла left будет указывать на идеальную позицию для вставки
     }
 }
