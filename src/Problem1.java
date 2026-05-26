@@ -11,13 +11,13 @@ public class Problem1 {
             int mid = left + (right - left) / 2;
             
             if (nums[mid] == target) {
-                return mid; // Нашли число, возвращаем его индекс
+                return mid;
             } else if (nums[mid] < target) {
-                left = mid + 1; // Ищем в правой половине
+                left = mid + 1;
             } else {
-                right = mid - 1; // Ищем в левой половине
+                right = mid - 1;
             }
         }
-        return -1; // Если число не нашли
+        return -1;
     }
 }
