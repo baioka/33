@@ -18,6 +18,6 @@ public class Problem2 {
                 right = mid - 1;
             }
         }
-        return left; // В конце цикла left будет указывать на идеальную позицию для вставки
+        return left;
     }
 }
