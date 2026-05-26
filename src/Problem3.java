@@ -11,12 +11,11 @@ public class Problem3 {
         while (left <= right) {
             int mid = left + (right - left) / 2;
             
-            // Запись "mid <= x / mid" вместо "mid * mid <= x" предотвращает переполнение типа int
             if (mid <= x / mid) {
-                ans = mid; // Запоминаем возможный ответ
-                left = mid + 1; // Пытаемся найти большее число
+                ans = mid;
+                left = mid + 1;
             } else {
-                right = mid - 1; // Число слишком большое
+                right = mid - 1;
             }
         }
         return ans;
